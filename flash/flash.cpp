@@ -1,11 +1,6 @@
 #include "stm32f3xx.h"
 #include "flash.h"
 
-flash::flash(uint16_t dat, uint16_t *addr){
-	_dat = (uint16_t)dat;
-	_addr = (uint16_t *)addr;
-}
-
 void flash::flash_unlock(void) {
 	FLASH->KEYR = 0x45670123;
 	FLASH->KEYR = 0xCDEF89AB;
