@@ -3,7 +3,7 @@
 
 class flash{
     public:
-    flash(uint16_t dat, uint16_t *addr);
+    flash(int dat, int *addr) : _dat((uint16_t)dat), _addr((uint16_t *)addr){}
     void flash_unlock(void);
     void flash_lock(void);
     inline static bool check_eop();
